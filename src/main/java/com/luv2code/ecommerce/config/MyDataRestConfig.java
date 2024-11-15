@@ -7,6 +7,7 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.core.mapping.HttpMethods;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
@@ -23,6 +24,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .forDomainType(ProductCategory.class)
                 .withItemExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+
+        config.exposeIdsFor(ProductCategory.class);
 
 
     }
