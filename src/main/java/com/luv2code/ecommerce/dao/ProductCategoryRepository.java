@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category")
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
-    
+
 }
